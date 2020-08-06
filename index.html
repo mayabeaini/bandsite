@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Biography - BandSite</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">
+            <img src="./assets/Logo/Logo-bandsite.svg" class="nav__logo" alt="BandSite Logo">
+        </a>
+            <ul class="nav__list">
+                <a href="index.html" class="nav__active nav__biography">
+                    <li class="nav__active--color">Biography</li>
+                </a>
+                <a href="./pages/shows.html" class="nav__non-active nav__shows">
+                    <li class="nav__non-active--color">Shows</li>
+                </a> 
+            </ul>
+    </nav>
+
+    <header class="hero hero__background">
+        <div class="hero__overlay">
+            <h1 class="hero__title">Gaspard Auge & Xavier de Rosnay</h1>
+        </div>
+    </header>
+
+    <article class="bio">
+        <h1 class="bio__title">About The Musicians</h1>
+        <img src="./assets/Images/Musician.JPG" class="bio__image" alt="The Musicians">
+        <p class="bio__quote">“We are more comfortable with not fighting what comes naturally. 
+            Before we might have thought, ‘We need to be smarter than this’”</p>
+        <p class="bio__quotee">- Xavier de Rosnay</p>
+        <h2 class="bio__band-members">Xavier de Rosnay & Gaspard Augé</h2>
+        <div class="bio__paragraph">
+            <p class="bio__description bio__description--first">
+                Xavier De Ronsay and Gaspard Augé had a few mutual friends, 
+                who happened to run a record label, seeking tracks for a 
+                compilation. With an immediate connection, the pair decided 
+                to try their hand at making a song. That’s when they created 
+                their breakout single, We Are Your Friends – a feel-good, 
+                funk-filled, instant anthem that lost the remix contest, 
+                but won the attention of Pedro Winter, director of the newly 
+                founded Ed Banger Records, who boasted Daft Punk as former 
+                clients. One week later, they were in his office, signing a 
+                record deal.</p>
+            <p class="bio__description">
+                Xavier De Ronsay and Gaspard Augé had a few mutual friends, 
+                who happened to run a record label, seeking tracks for a 
+                compilation. With an immediate connection, the pair decided 
+                to try their hand at making a song. That’s when they created 
+                their breakout single, We Are Your Friends – a feel-good, 
+                funk-filled, instant anthem that lost the remix contest, 
+                but won the attention of Pedro Winter, director of the newly 
+                founded Ed Banger Records, who boasted Daft Punk as former 
+                clients. One week later, they were in his office, signing a 
+                record deal.</p>
+        </div>
+    </article>
+
+    <section class="gallery">
+        <h2 class="gallery__title">Photo Gallery</h2>
+        <div class="gallery__photo">
+            <img src="./assets/Images/Photo-gallery-1.jpg" class="gallery__image" alt="Colorful Party Lights">
+            <img src="./assets/Images/Photo-gallery-2.jpg" class="gallery__image" alt="Woman Partying">
+            <img src="./assets/Images/Photo-gallery-3.jpg" class="gallery__image" alt="Arms Up at a Concert">
+            <img src="./assets/Images/Photo-gallery-4.jpg" class="gallery__image" alt="Woman at a Concert">
+            <img src="./assets/Images/Photo-gallery-5.jpg" class="gallery__image" alt="Huge Party Streamers at a Concert">
+            <img src="./assets/Images/Photo-gallery-6.jpg" class="gallery__image" alt="The Singer of BandSite Singing">
+            <img src="./assets/Images/Photo-gallery-7.jpg" class="gallery__image" alt="Water Drops in the Air at Concert">
+            <img src="./assets/Images/Photo-gallery-8.jpg" class="gallery__image" alt="DJ">
+            <img src="./assets/Images/Photo-gallery-9.jpg" class="gallery__image" alt="Paper Falling from Sky at Concert">
+        </div>
+    </section>
+
+    <section class="comment">
+        <h2 class="comment__title">Join the Conversation</h2>
+        <div class="comment__section">
+            <div class="comment__new">
+                <img src="./assets/Images/Mohan-muruge.jpg" class="comment__icon" id="icon" alt="commenter">
+                <form class="comment__form" method="POST" enctype="application/json">
+                    <label class="comment__full-name" for="fullname">Name</label>
+                        <input class="comment__full-name-input" type="text" id="fullname" name="fullname" placeholder="Enter your name">  
+                    <label class="comment__text" for="comment">Comment</label>
+                        <textarea class="comment__text-input" id="comment" name="comment" placeholder="Add a new comment"></textarea>
+                    <input class="comment__button" id='button' type="submit" value="COMMENT">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer--boxing">
+            <div class="footer__social">
+                <h2 class="footer__title">Get In Touch</h2>
+                <div class="footer__icon">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="./assets/Icons/SVG/Icon-instagram.svg" class="footer__icon--spacing" alt="Instagram Icon">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="./assets/Icons/SVG/Icon-facebook.svg" class="footer__icon--spacing" alt="Facebook Icon">
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <img src="./assets/Icons/SVG/Icon-twitter.svg" class="footer__icon--spacing" alt="Twitter Icon">
+                    </a>
+                </div>
+            </div>
+            <img src="./assets/Logo/Logo-bandsite.svg" class="footer__logo" alt="BandSite Logo">
+        </div>
+        <div class="footer--boxing footer__inquiry">
+            <div class="footer__info">
+                <p class="footer__name">Richard Rovner<br>
+                    The Bees Knees Management</p>
+                <p class="footer__address">460 King Street West <br>
+                Toronto, Ontario M5V 1L7</p>
+                <p class="footer__contact">
+                    <a href="mailto:info@thebeesknees.com" class="footer__contact-link">info@thebeesknees.com</a>
+                </p>
+            </div>
+            <div class="footer__info">
+                <p class="footer__name">Marsha Vlasic <br>
+                    Artist Group International</p>
+                <p class="footer__address footer__address-special">Booking Agent for <br>
+                    US / South America / Japan</p>
+                <p class="footer__contact">
+                    <a href="mailto:marsha.vlasic@artistgrp.com" class="footer__contact-link">marsha.vlasic@artistgrp.com</a>
+                </p>
+            </div>
+            <div class="footer__info">
+                <p class="footer__name">Russel Warby <br>
+                    William Morrir Entertainment</p>
+                <p class="footer__address">Booking Agent for <br>
+                    UK / EU / AU</p>
+                <p class="footer__contact">
+                    <a href="mailto:RLW@wmeentertainment.com" class="footer__contact-link">RLW@wmeentertainment.com</a>
+                </p>
+            </div>
+        </div>
+        <div>
+            <p class="footer__copyright">Copyright The Bees Knees © 2018
+                 All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="./JS/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+@import './main.scss';
+    
+*{
+    margin: 0;
+    padding: 0;
+    color: $black;
+}
+
+.header-shows{
+    background-image: url(../assets/Images/IMG_0064.jpg);
+    background-position: center;
+    height: 147.5vw;
+    background-size: cover;
+    @include tablet{
+        height: 87.24vw;
+    }
+    @include desktop{
+        height: 46.527vw;
+    }
+    &__media{
+        @include desktop{
+            align-self: center;
+        }
+    }
+    &__overlay{
+        background-color: rgba(50, 50, 50, 0.5);
+        height: 147.5vw;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0 $half-mobile;
+        @include tablet{
+            height: 87.24vw;
+            padding: $tablet-margin $tablet-padding;
+        }
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 11.11vw $tablet-margin;
+            height: 46.527vw;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20vw 0 $mobile-margin 0;
+        @include tablet{
+            margin: 0 0 5.208vw 0;
+        }
+        @include desktop{
+            justify-content: center;
+        }
+    }
+    &__album{
+        color: $white;
+        font-size: 0.906rem;
+        font-weight: 500;
+        margin-bottom: $half-mobile;
+        @include tablet{
+            font-size: $twentyfour;
+            font-weight: 500;
+        }
+        @include desktop{
+            margin-bottom: 2.77vw;
+        }
+    }
+    &__title{
+        color: $white;
+        font-weight: bold;
+        font-size: $thirtysix;
+        line-height: 3.125rem;
+        @include tablet{
+            font-size: 3.875rem;
+            width: 83%;
+            line-height: 5.188rem;
+        }
+        @include desktop{
+            width: 90%;
+            font-size: $sixty;
+        }
+    }
+    &__media{
+        border-radius: 4px;
+        margin-bottom: $mobile-margin;
+        height: 31.25vw;
+        @include tablet{
+            width: 62%;
+            height: 18.23vw;
+            margin: 0;
+            padding: 0;
+        }
+        @include desktop{
+            margin-top: 6vw;
+            width: 30.277vw;
+            height: 11.66vw;
+        }
+    }
+}
+
+.tickets{
+    padding: $mobile-margin $half-mobile 7vw $half-mobile;
+    &__show{
+        display: flex;
+        justify-content: flex-start;
+        justify-content: space-between;
+        width: 63.4%;
+        @include desktop{
+            margin-left: 1vw;
+            margin-right: 0;
+        }
+    }
+    @include tablet{
+        padding-top: 7vw;
+    }
+    @include desktop{
+        display: flex;
+        padding: 3.3vw $tablet-margin $desktop-margin $tablet-margin;
+        justify-content: space-between;
+    }
+    &__top{
+        display: none;
+        @include tablet{
+            display: initial;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: $silver;
+            font-size: $thirteen;
+            margin-bottom: 1vw;
+        }
+        &:last-child{
+            @include desktop{
+                padding-right: 0.5vw;
+            }
+        }
+    }
+    &__destination{
+        @include desktop{
+            width: 55.83vw;
+        }
+    }
+    &__boxing{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 20%;
+        }
+    }
+    &__title{
+        margin-bottom: $tablet-margin;
+        font-weight: bold;
+        font-size: $twentyfour;
+        @include tablet{
+            font-size: $thirtysix;
+            margin-bottom: 5vw;
+        }
+        @include desktop{
+            margin-top: 0.7vw;
+            font-size: $thirtytwo;
+        }
+    }
+    &__container{
+        border-bottom: 0.5px solid rgba(211, 211, 211,0.4);
+        margin-bottom: $top-bottom;
+        padding-bottom: $half-mobile;
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            align-items: center;
+            padding: 0;
+        }
+        @include desktop{
+            margin-left: 1vw;
+        }
+    }
+    &__info{
+        @extend .comment__full-name;
+        margin-bottom: $half-mobile;
+        @include tablet{
+            display: none;
+        }
+    }
+    &__date{
+        font-weight: 500;
+        font-size: 0.9rem;
+        margin-bottom: $top-bottom;
+        @include tablet{
+            padding: 0;
+            margin: 0;
+            width: 58%;
+            font-size: 1rem;
+        }
+        @include desktop{
+            font-size: 1.044rem;
+        }
+    }
+    &__venue{
+        font-size: $thirteen;
+        margin-bottom: $top-bottom;
+        @include tablet{
+            padding: 0;
+            margin: 0;
+            height: 10%;
+            font-weight: normal;
+            font-size: $fifteen;
+            width: 100%;
+        }
+        @include desktop{
+            font-size: $fifteen;
+        }
+    }
+    &__location{
+        margin-bottom: $mobile-margin;
+        font-size: $twelve;
+        @include tablet{
+            padding: 0;
+            margin: 0;
+            height: 10%;
+            font-size: $fifteen;
+            width: 86%;
+        }
+        @include desktop{
+            font-size: $fourteen;
+        }
+    }
+    &__button{
+        background-color: $black;
+        color: $white;
+        border: none;
+        border-radius: 4px;
+        text-transform: uppercase;
+        width: 100%;
+        font-size: 1rem;
+        height: 17vw;
+        align-self: center;
+        @include tablet{
+            width: 17.358vw;
+            height: 6vw;
+            margin: 2vw 0;
+            font-size: 0.85rem;
+        }
+        @include desktop{
+            width: 11.11vw;
+            height: $desktop-margin;
+            font-size: $thirteen;
+            margin-bottom: 1.33vw;
+            margin-top: 1.33vw;
+        }
+    }
+}

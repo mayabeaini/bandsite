@@ -1,0 +1,754 @@
+@import './partials/mixins';
+@import './partials/typography';
+@import './partials/fonts';
+@import './partials/colors';
+@import './partials/keyframes';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'AvenirNext LT Pro';
+    color: $black;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: $black;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__logo {
+        margin-top: 15%;
+        margin-left: 3vh;
+        @include tablet {
+            margin-top: 0;
+            margin-left: 0;
+            padding-left: 3vw;
+        }
+        @include desktop {
+            margin-left: $tablet-margin;
+            padding: 0;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        font-size: 0.938rem;
+        padding-left: 0;
+        @include tablet {
+            width: 100%;
+            height: 100%;
+            margin-left: 7.5%;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        @include desktop {
+            margin: 0 0 0 4.3vw;
+        }
+    }
+    &__biography {
+        font-weight: 500;
+        margin-left: 0;
+        padding: 0.283rem 3.219rem 0.625rem 3.188rem;
+        &:hover {
+            animation-name: wobble;
+            animation-duration: 0.75s;
+        }
+        @include tablet {
+            padding: 1.875rem 0.353rem 1.625rem 0.353rem;
+            margin-right:4%;
+        }
+        @include desktop {
+            padding: 1.875rem 0.708rem 1.625rem 0.708rem;
+            margin: 0;
+        }
+    }
+    &__active {
+        text-decoration: none;
+        border-bottom: 0.25rem solid $white;
+        &--color {
+            color: $white;
+        }
+    }
+    &__shows {
+        padding: 0.283rem 3.219rem 0.625rem 3.188rem;
+        margin-right: 0;
+        @include tablet {
+            padding: 1.875rem 0.353rem 1.625rem 0.353rem;
+            margin-left:4%;
+        }
+        @include desktop {
+            margin: 0 0 0 4.4vw;
+            padding: 1.875rem 0.708rem 1.625rem 0.708rem;
+        }
+    }
+    &__non-active {
+        text-decoration: none;
+        &--color {
+            color: $silver;
+        }
+        &:hover {
+            animation-name: wobble;
+            animation-duration: 0.75s;
+        }
+    }
+}
+
+.hero {
+    &__background {
+        background-image: url(../assets/Images/backgroundPic.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 57.18vw;
+        @include tablet {
+            height: 52.08vw;
+        }
+        @include desktop {
+            height: 46.53vw;
+        }
+    }
+    &__overlay {
+        background-color: rgba(50, 50, 50, 0.5);
+        height: 57.18vw;
+        width: $fullscreen;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        @include tablet {
+            height: 52.08vw;
+        }
+        @include desktop {
+            height: 46.53vw;
+        }
+    }
+    &__title {
+        color: $white;
+        font-weight: bold;
+        margin-left: $half-mobile;
+        font-size: $twentyfour;
+        width: 70%;
+        @include tablet {
+            font-size: $sixty;
+            margin-left: $tablet-padding;
+        }
+        @include desktop {
+            margin-left: $tablet-margin;
+            width: 50%;
+        }
+    }
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: $mobile-margin $half-mobile $tablet-margin $half-mobile;
+    @include tablet {
+        margin: 5.5vw $tablet-padding;
+    }
+    @include desktop {
+        margin: $desktop-margin $tablet-margin 0 $tablet-margin;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: $twentyfour;
+        @include tablet {
+            font-size: $thirtysix;
+        }
+        @include desktop {
+            margin: 0;
+        }
+    }
+    &__image {
+        width: 90vw;
+        margin-top: $top-bottom;
+        @include tablet {
+            width: 93.75vw;
+            height: 47.13vw;
+            margin-top: 4.2vw;
+        }
+        @include desktop {
+            width: 62.22vw;
+            height: 31.25vw;
+            margin-left: 6.38vw;
+            margin-top: $desktop-margin;
+        }
+    }
+    &__quote {
+        font-weight: 500;
+        font-size: $sixteen;
+        line-height: $twentyfour;
+        margin-top: $top-bottom;
+        @include tablet {
+            font-weight: bold;
+            font-size: $twentyfour;
+            line-height: $thirtytwo;
+            margin-top: 4.5vw;
+        }
+        @include desktop {
+            width: 58vw;
+            font-size: 1.269rem;
+            margin: $desktop-margin 0 0 6.38vw;
+        }
+    }
+    &__quotee {
+        font-weight: 500;
+        margin-top: $mobile-margin;
+        font-size: $fourteen;
+        @include tablet {
+            font-size: $sixteen;
+            margin-top: 4.5vw;
+        }
+        @include desktop {
+            margin: $desktop-margin 0 0 6.38vw;
+            font-size: $fourteen;
+        }
+    }
+    &__band-members {
+        font-size: $twentyfour;
+        font-weight: 500;
+        margin-top: $tablet-margin;
+        @include tablet {
+            font-weight: bold;
+            font-size: $twentyfour;
+            margin-top: 5.4vw;
+        }
+        @include desktop {
+            margin: $threeeight 0 2.22vw 6.38vw;
+            font-size: 1.313rem;
+        }
+    }
+    &__paragraph {
+        margin-top: 0.469rem;
+        @include tablet {
+            display: flex;
+            justify-content: space-around;
+            margin-top: $tablet-padding;
+        }
+        @include desktop {
+            margin-top: 0;
+            margin-left: 6.38vw;
+            width: 61.11vw;
+        }
+    }
+    &__description {
+        font-size: 0.76rem;
+        line-height: $twentyfour;
+        margin-bottom: 5%;
+        @include tablet {
+            font-size: $fourteen;
+            line-height: $twentyfour;
+            font-weight: normal;
+            margin-bottom: 2.3%;
+        }
+        @include desktop {
+            margin-bottom: $desktop-margin;
+            font-size: 0.75rem;
+        }
+        &--first {
+            margin-top: 3vw;
+            @include tablet {
+                margin: 0 4.5% 0 0;
+            }
+        }
+    }
+}
+
+.gallery {
+    background-color: $alabaster;
+    display: flex;
+    flex-direction: column;
+    padding: $mobile-margin $half-mobile $tablet-margin $half-mobile;
+    @include tablet {
+        padding: 6vw $tablet-padding 4.3vw $tablet-padding;
+    }
+    @include desktop {
+        padding: $desktop-margin 0 1.333vw $tablet-margin;
+    }
+    &__title {
+        font-size: $twentyfour;
+        font-weight: bold;
+        @include tablet {
+            font-size: 2.24rem;
+        }
+    }
+    &__photo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: $top-bottom;
+        @include desktop {
+            justify-content: flex-start;
+            margin-top: 4.44vw;
+        }
+    }
+    &__image {
+        width: 90vw;
+        margin-bottom: $half-mobile;
+        filter: grayscale(90%);
+        @include tablet {
+            width: 29.16vw;
+            height: 16.4vw;
+            padding: 0;
+            margin-bottom: $tablet-padding;
+        }
+        @include desktop {
+            margin: 0 2vw 2vw 0;
+            width: 23.88vw;
+            height: 14.4vw;
+        }
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+.comment {
+    padding: $mobile-margin $half-mobile 0 $half-mobile;
+    @include tablet {
+        padding: 4.2vw 3.12vw 0 3.12vw;
+    }
+    @include desktop {
+        padding: 3.333vw $tablet-margin 0 $tablet-margin;
+        margin: 0;
+    }
+    &__title {
+        font-weight: bold;
+        margin-bottom: $tablet-margin;
+        @include tablet {
+            font-size: $thirtysix;
+            margin-bottom: 5.2vw;
+        }
+        @include desktop {
+            font-size: 1.875rem;
+            margin-bottom: $threeeight;
+        }
+    }
+    &__section {
+        margin-bottom: 12.4vw;
+        @include tablet {
+            margin: 0 13.02vw 5.208vw 13.02vw;
+        }
+        @include desktop {
+            width: 36.66vw;
+            margin-left: 19.166vw;
+        }
+    }
+    &__new {
+        display: flex;
+        padding-bottom: $mobile-margin;
+        border-bottom: 1px solid rgba(211, 211, 211,0.4);
+        @include tablet {
+            padding-bottom: 4.2vw;
+        }
+        @include desktop {
+            padding-bottom: $desktop-padding;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-left: $half-mobile;
+        width: $fullscreen;
+        @include desktop {
+            margin-left: 1.388vw;
+        }
+    }
+    &__container {
+        border-bottom: 0.5px solid rgba(211, 211, 211,0.4);
+        margin-top:$top-bottom;
+        padding-bottom: $top-bottom;
+        display: flex;
+        @include tablet {
+            margin-top: 3.12vw;
+            padding-bottom: 3.12vw;
+        }
+        @include desktop {
+            margin-top: 1.666vw;
+            padding-bottom: 1.666vw;
+        }
+    }
+    &__area {
+        margin-left: $half-mobile;
+        width: $fullscreen;
+        @include tablet {
+            margin-left: 2.03vw;
+        }
+        @include desktop {
+            margin-left: 1.111vw;
+        }
+        &-name {
+            font-weight: 500;
+            font-size: $fourteen;
+            @include tablet {
+                margin-right: 1.11vw;
+            }
+            @include desktop {
+                font-size: $thirteen;
+                margin-right: 0.7vw;
+            }
+        }
+        &-date {
+            color: $silver;
+            font-size: $fourteen;
+            align-self: center;
+            @include desktop {
+                font-size: 0.719rem;
+            }
+        }
+        &-paragraph{
+            font-size: $fourteen;
+            @include desktop{
+                font-size: 0.725rem;
+            }
+        }
+    }
+    &__boxing{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3.4vw;
+        @include tablet{
+            justify-content: flex-start;
+            margin-bottom: 1.11vw;
+        }
+        @include desktop{
+            margin-bottom: 0.8vw;
+        }
+    }
+    &__full-name{
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $silver;
+        font-size: $thirteen;
+        margin-bottom: 1vw;
+        &-input{
+            border: 1px solid $mercury;
+            border-radius: 4px;
+            height: 15.625vw;
+            margin-bottom: $half-mobile;
+            padding-left: 4vw;
+            font-size: $fourteen;
+            @include tablet{
+                margin-bottom: 3vw;
+                height: 6.51vw;
+            }
+            @include desktop{
+                height: 4vw;
+                padding-left: 1rem;
+                margin-bottom: 2vw;
+            }
+        }
+    }
+    &__text{
+        @extend .comment__full-name;
+        &-input{
+            padding:$half-mobile 0 13vw 4vw;
+            margin-bottom: $half-mobile;
+            border: 1px solid lightgray;
+            background-color: rgb(252, 252, 252);
+            border-radius: 3px;
+            font-size: $fourteen;
+            @include tablet{
+                padding: 2.5vw 0 $mobile-margin 3vw;
+                margin-bottom: 3.12vw;
+            }
+            @include desktop{
+                padding-bottom: 8vw;
+                margin-bottom: 2vw;
+                padding-left: 1.33vw;
+                padding-top: 1.5vw;
+                height: $top-bottom;
+            }
+        }
+    }
+    &__button{
+        background-color: $black;
+        color: $white;
+        text-decoration: none;
+        border: 0;
+        height: 13vw;
+        font-size: $fourteen;
+        border-radius: 3px;
+        @include tablet{
+            width: 20.83vw;
+            height: 6.51vw;
+            border-radius: 3px;
+            align-self: flex-end;
+        }
+        @include desktop{
+            width: $tablet-margin;
+            height: 4.166vw;
+            border-radius: 4px;
+        }
+        &:hover{
+            background-color: black;
+        }
+    }
+    &__commenter{
+        border-radius: 50%;
+        width: $tablet-margin;
+        height: $tablet-margin;
+        object-fit: cover;
+        object-position: left;
+        @include tablet{
+            width: 5.208vw;
+            height: 5.208vw;
+        }
+        @include desktop{
+            width: 3vw;
+            height: 3vw;
+        }
+    }
+    &__icon{
+        @extend .comment__commenter;
+        margin-top: 5.93vw;
+        width: 15.625vw;
+        height: 15.625vw;
+        @include tablet{
+            margin-top: 2.99vw;
+            width: 6.51vw;
+            height: 6.51vw;
+        }
+        @include desktop{
+            margin-top: 2.66vw;
+            width: $desktop-margin;
+            height: $desktop-margin;
+        }
+    }
+    &__img{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    &__delete{
+        margin-top: 1vw;
+        width: 40%;
+        border: 0.1px solid $mercury;
+        border-radius: 5px;
+        font-size: 8px;
+        color: $silver;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:hover .comment__span{
+            display: initial;
+        }
+        &:hover{
+            margin: 1vw;
+        }
+        @include tablet{
+            margin-top: 0.5vw;
+        }
+        @include desktop{
+            margin-top: 1vw;
+        }
+    }
+    &__span{
+        display: none;
+        margin-top: 0.5vw;
+        color: $silver;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+}
+
+.footer {
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    padding: 4vw;
+    @include tablet {
+        padding: 6vw $tablet-padding;
+    }
+    @include desktop {
+        padding: $desktop-margin $tablet-margin 0 $tablet-margin;
+    }
+    &--boxing {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }  
+    }
+    &__social {
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            width: 60%;
+        }
+        @include desktop {
+            width: $fullscreen;
+        }
+    }
+    &__title {
+        color: $white;
+        font-size: $thirtysix;
+        font-weight: bold;
+        margin-top: $mobile-margin;
+        @include tablet {
+            margin: 0;
+            padding: 0;
+            width: 81%;
+        }
+        @include desktop {
+            font-size: 1.913rem;
+            width: 192px;
+        }
+    }
+    &__icon {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1vw;
+        width: 45%;
+        margin-top: 6.5vw;
+        @include tablet {
+            justify-content: space-between;
+            margin: 1.5vw 0 0 0;
+            padding-right: 5.3%;
+        }
+        @include desktop {
+            justify-content: flex-start;
+            padding: 0;
+            margin-left: $desktop-margin;
+            margin-top: 0.8vw;
+        }
+        &--spacing {
+            @include desktop {
+                margin-right: 1.9vw;
+            }
+        }
+    }
+    &__logo {
+        display: none;
+        @include tablet {
+            display: initial;
+            padding-right: 1vw;
+        }
+        @include desktop {
+            width: 8.33vw;
+            padding-right: 0;
+        }
+    }
+    &__inquiry {
+        margin-top: $half-mobile;
+        @include tablet {
+            margin: 0;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4vw;
+        @include tablet {
+            margin-top: 6vw;
+            margin-right: 1vw;
+        }
+        @include desktop {
+            margin-top: $threeeight;
+            margin-right: $desktop-margin;
+        }
+        &:nth-child(2) {
+            @include tablet{
+            margin-right: 5.2vw;
+            }
+            @include desktop {
+                margin-left: 0.5vw;
+            }
+        }
+        &:last-child {
+            @include tablet {
+                margin-right: 1.6vw;
+            }
+            @include desktop {
+                margin-left: 0.8vw;
+            }
+        }
+    }
+    &__name {
+        font-weight: 500;
+        font-size: 0.863rem;
+        line-height: $twentytwo;
+        color: $white;
+        @include tablet {
+            font-size: $sixteen;
+            margin: 0;
+        }
+        @include desktop {
+            font-size: 0.844rem;
+        }
+    }
+    &__address {
+        margin-top: 4vw;
+        font-weight: normal;
+        font-size: 0.738rem;
+        line-height: $twentytwo;
+        color: $silver;
+        @include tablet {
+            font-size: $fourteen;
+            margin: 15% 0 0 0;
+        }
+        @include desktop {
+            font-size: 0.744rem;
+            margin-top: $desktop-padding;
+        }
+        &-special {
+            @include tablet {
+                margin: 17% 0 0 0;
+            }
+            @include desktop {
+                margin-top: 1.64vw;
+            }
+        }
+    }
+    &__contact {
+        font-weight: normal;
+        font-size: 0.725rem;
+        line-height: $twentytwo;
+        margin-top: 4vw;
+        margin-bottom: 2vw;
+        @include tablet {
+            font-size: 0.85rem;
+        }
+        @include desktop {
+            font-size: 0.73rem;
+            margin:$desktop-padding 0 0 0;
+        }
+        &-link {
+            text-decoration: none;
+            color: $silver;
+        }
+    }
+    &__copyright {
+        color: $white;
+        font-weight: normal;
+        color: $silver;
+        font-size: 0.75rem;
+        margin-top: 7vw;
+        margin-bottom: 8vw;
+        width: 65%;
+        @include tablet {
+            width: 100%;
+            font-size: 0.877rem;
+            margin: 3.4% 0 1% 0;
+        }
+        @include desktop {
+            margin: 2.77vw 0;
+            font-size: 0.74rem;
+        }
+    }
+}
